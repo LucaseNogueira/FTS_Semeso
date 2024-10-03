@@ -7,10 +7,10 @@ function GetStarted(){
             <article className="row">
                 <div className="col-12">
                     <h2>Antes de tudo...</h2>
-                    <p dangerouslySetInnerHTML={{__html:"Esta página aborda conceitos <b>fundamentais do Full Text Search</b>. Para aplicar estes conceitos foi adaptado uma base chamada <a href='https://www.kaggle.com/datasets/gpreda/bbc-news' target='_blank' rel='noopener noreferrer'>BBC News</a>, presente no Kaggle. Você pode seguir os passos deste tópico para conseguir esta base de dados adaptada ou aplicar os conhecimentos aprendidos em outra base de dados de sua escolha. Caso escolha aplicar os conhecimentos desta página em outra base de dados, este tópico pode ser ignorado e você pode avançar para o tópico <b>O que é um documento?</b>."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Esta página aborda conceitos <b>fundamentais do Full Text Search</b>. Para aplicar estes conceitos foi adaptado uma base chamada <a href='https://www.kaggle.com/datasets/gpreda/bbc-news' target='_blank' rel='noopener noreferrer'>BBC News</a>, presente no Kaggle. Você pode seguir os passos deste tópico para conseguir esta base de dados adaptada ou aplicar os conhecimentos aprendidos em outra base de dados de sua escolha. Caso escolha aplicar os conhecimentos desta página em outra base de dados, este tópico pode ser ignorado e você pode avançar para o tópico '<b>O que é um documento?</b>'."}}/>
                     <ol>
                         <li dangerouslySetInnerHTML={{__html:"Abra o <b>PgAdmin</b> e crie um novo banco de dados no <b><i>schema public</i></b>: <code>Servers >> [SELECIONE O SEU SERVER] >> Databases >> Create >> Database...</code>. Caso queira, você pode chamar este banco de <b>BBCNews</b>;"}}/>
-                        <li dangerouslySetInnerHTML={{__html:"Abra um <b><i>Query Tool</i></b> e insira o sequinte comando para criar as tabelas:"}}/>
+                        <li dangerouslySetInnerHTML={{__html:"Abra um <b><i>Query Tool</i></b> e insira o seguinte comando para criar as tabelas:"}}/>
                         <SQLBlockComponent conteudo="
                         /*CRIANDO TABELA TBNEWS COM SUAS SEQUENCES E SUAS CONSTRAINTS*/
                         CREATE SEQUENCE tbnews_newid_seq;
@@ -44,7 +44,7 @@ function GetStarted(){
                         );
                         "/>
                         <li dangerouslySetInnerHTML={{__html:"Acesse a pasta <a href='https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data' target='_blank' rel='noopener noreferrer'>data</a> deste repositório e realize o <b><i>download</i></b> dos arquivos <b><i>CSV</i></b> <a href='https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbauthor.csv' target='_blank' rel='noopener noreferrer'>tbauthor</a>, <a href='https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbnews.csv' target='_blank' rel='noopener noreferrer'>tbnews</a> e <a href='https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbnewsauthor.csv' target='_blank' rel='noopener noreferrer'>tbnewsauthor</a>"}}/>
-                        <li dangerouslySetInnerHTML={{__html:"Retorne ao <b>PGAdmin</b>, precione o botão direito na tabela <code>tbauthor</code> e clique em <code>Import/Export Data..</code>. Selecione o arquivo <b><i>tbauthor.csv</i></b>, informe como formato <b><i>CSV</i></b> e como <i>encoding <b>UTF8</b></i>. Clique em <b>OK</b>;"}}/>
+                        <li dangerouslySetInnerHTML={{__html:"Retorne ao <b>PGAdmin</b>, pressione o botão direito na tabela <code>tbauthor</code> e clique em <code>Import/Export Data..</code>. Selecione o arquivo <b><i>tbauthor.csv</i></b>, informe como formato <b><i>CSV</i></b> e como <i>encoding <b>UTF8</b></i>. Clique em <b>OK</b>;"}}/>
                         <li dangerouslySetInnerHTML={{__html:"Repita o processo da <b>Etapa 4</b>, porém com as tabelas/arquivos <b><i>tbnews</i></b> e <b><i>tbnewsauthor</i></b>;"}}/>
                         <li dangerouslySetInnerHTML={{__html:"Pronto, é só isso!!! :D"}}/>
                     </ol>
@@ -58,7 +58,7 @@ function GetStarted(){
                     <img src="/img/article/get_started/Estrutura da palavra.png" alt="Estrutura de uma palavra" className="d-block mx-auto mt-4 mb-4"/>
 
                     <h2>O que são Stop Words?</h2>
-                    <p dangerouslySetInnerHTML={{__html:"Stop word pode ser interpretado como palavras muito frequentes no <b>vocabulário</b> de uma determinada língua ou região. Por ser tão comum, estas palavras são <b>irrelevantes</b> para o conjunto de resultados do Full Text Search. Num vocabulário, exemplo português brasileiro, é comum termos como stop words palavras como <b>de</b>, <b>a</b>, <b>com</b>, <b>sem</b>. Assim é possível concluir que as palavras consideradas como stop words pelos motores de buscas são, na maioria dos casos, <b>conjuções, preposições e outras palavras</b>."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Stop word pode ser interpretado como palavras muito frequentes no <b>vocabulário</b> de uma determinada língua ou região. Por ser tão comum, estas palavras são <b>irrelevantes</b> para o conjunto de resultados do Full Text Search. Num vocabulário, exemplo português brasileiro, é comum termos como stop words palavras como <b>de</b>, <b>a</b>, <b>com</b>, <b>sem</b>. Assim é possível concluir que as palavras consideradas como stop words pelos motores de buscas são, na maioria dos casos, <b>conjunções, preposições e outras palavras</b>."}}/>
 
                     <h2>O que é um Dicionário?</h2>
                     <p dangerouslySetInnerHTML={{__html:"Quando falamos de <b>Text Search</b>, dicionários são utilizados na <b>eliminação das stop words</b>, na <b>aplicação do stemming</b> (processo que <i>'reduz'</i> a palavra em radical) e na localização de <b>sinônimos</b>, auxiliando na criação do <b>vetor de lexemes</b>. No PostgreSQL, esta configuração é definida pela variável <code>default_text_search_config</code>, que aplica o tratamento das stop words e a transformação da palavra no seu radical. Para apresentar o seu valor em tela basta <i>codar</i> <code>SHOW default_text_search_config</code>."}}/>
@@ -69,37 +69,37 @@ function GetStarted(){
                         <li dangerouslySetInnerHTML={{__html:"Alterando as <b>configurações</b> do <b>banco de dados</b>;"}}/>
                         <li dangerouslySetInnerHTML={{__html:"Indicando um dicionário <b>diretamente nas funções de text search</b>;"}}/>
                     </ul>
-                    <p dangerouslySetInnerHTML={{__html:"Cada definição vai de acordo com o problema. A lista de configurações padrões de Text Search do PostgreSQL pode ser encontrada com <code>SELECT * FROM pg_catalog.pg_ts_config</code>. Já o conteúdo de cada dicionário esta no caminho <code>/PostgreSQL/share/tsearch_data</code>, nesta pasta todos os arquivos <code>.stop</code> são dicionários de stop words, já os arquivos <code>.syn</code> são sinônimos."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Cada definição vai de acordo com o problema. A lista de configurações padrões de Text Search do PostgreSQL pode ser encontrada com <code>SELECT * FROM pg_catalog.pg_ts_config</code>. Já o conteúdo de cada dicionário está no caminho <code>/PostgreSQL/share/tsearch_data</code>, nesta pasta todos os arquivos <code>.stop</code> são dicionários de stop words, já os arquivos <code>.syn</code> são sinônimos."}}/>
                     <SQLBlockComponent conteudo={`SELECT * FROM pg_catalog.pg_ts_config`}/> 
                     <img src="/img/article/get_started/pg_ts_config.png" alt="Resultado do pg_ts_config" className="d-block mx-auto mt-4 mb-4"/> 
-                    <p dangerouslySetInnerHTML={{__html:"O banco de dados utilizando para explicar este conteúdo é inteiramente em inglês. Desta forma, o dicionário recomendado é o <code>pg_catalog.english</code>, ou outro dicionário derivado do inglês. Para alterar as configurações padrões de text search da sessão basta informar <code>SET default_text_search_config  = 'pg_catalog.english'</code>."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"O banco de dados utilizado para explicar este conteúdo é inteiramente em inglês. Desta forma, o dicionário recomendado é o <code>pg_catalog.english</code>, ou outro dicionário derivado do inglês. Para alterar as configurações padrões de text search da sessão basta informar <code>SET default_text_search_config  = 'pg_catalog.english'</code>."}}/>
 
                     <h2>tsvector && tsquery</h2>
                     <p dangerouslySetInnerHTML={{__html:"O PostgreSQL disponibiliza dois <code>data types</code> para o <b>processamento de linguagem natural</b> em documentos, sendo eles o <code>tsvector</code> e o <code>tsquery</code>."}}/>
 
                     <h2>tsvector</h2>
-                    <p dangerouslySetInnerHTML={{__html:"Sobre o <code>tsvector</code> podemos concluir é uma <b>lista ordenada de várias palavras</b>, onde, por padrão, elas são salvas em ordem alfabética no vetor caso identificadas num documento."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Sobre o <code>tsvector</code> podemos concluir que é uma <b>lista ordenada de várias palavras</b>, onde, por padrão, elas são salvas em ordem alfabética no vetor caso identificadas num documento."}}/>
                     <SQLBlockComponent conteudo={`SELECT 'a fat cat sat on a mat and ate a fat rat but fat cats is not weak'::tsvector`}/>
                     <img src="/img/article/get_started/tsvector_1.png" alt="Resultado tsvector num texto simples" className="d-block mx-auto mt-4 mb-4"/>
                     <p dangerouslySetInnerHTML={{__html:"O <code>tsvector</code> não adiciona ao vetor o <b>radical</b> de cada palavra e nem realiza o tratamento de palavras chaves ou o ranking das palavras. O <code>tsvector</code> e o <code>tsquery</code> são apenas <b>“ferramentas fundamentais”</b> do Full Text Search, não serão eles que irão tratar tudo relacionado ao FTS, porém para entender FTS no PostgreSQL é necessário entender  <code>tsvector</code> e <code>tsquery</code>."}}/>
                     <p dangerouslySetInnerHTML={{__html:"Outra característica do <code>tsvector</code> é manter o posicionamento das palavras no documento. O posicionamento é um inteiro único entre <b>1 a 16383</b>."}}/>
                     <SQLBlockComponent conteudo={`SELECT 'a:1 fat:2 cat:3 sat:4 on:5 a:6 mat:7 and:8 ate:9 a:10 fat:11 rat:12 but:13 fat:14 cats:15 is:16 not:17 weak:18'::tsvector`}/>
                     <img src="/img/article/get_started/tsvector_pos.png" alt="Resultado tsvector com posicionamento das palavras" className="d-block mx-auto mt-4 mb-4"/>
-                    <p dangerouslySetInnerHTML={{__html:"Um documento, por exemplo uma pagina na internet, pode possuir diferentes partes: cabeçalho, rodapé e corpo. Sabendo disso, é possível determinar pesos as palavras com o <code>tsvector</code>. Estes pesos vão de <b>A</b> a <b>D</b> e são muito uteis determinar a importância de um conjunto de palavras, seja por serem de partes distintas do documento ou serem partes de diferentes documentos mesclados."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Um documento, por exemplo uma página na internet, pode possuir diferentes partes: cabeçalho, rodapé e corpo. Sabendo disso, é possível determinar os pesos das palavras com o <code>tsvector</code>. Estes pesos vão de <b>A</b> a <b>D</b> e são muito uteis determinar a importância de um conjunto de palavras, seja por serem de partes distintas do documento ou serem partes de diferentes documentos mesclados."}}/>
                     <SQLBlockComponent conteudo={`SELECT 'a:1A fat:2A,3C cat:5D'::tsvector;`}/>
                     <img src="/img/article/get_started/tsvector_pesos_1.png" alt="Resultado tsvector com pesos" className="d-block mx-auto mt-4 mb-4"/>
                     <SQLBlockComponent conteudo={`SELECT 'a:1A fat:2A cat:3A'::tsvector || 'a:1B fat:2B cat:3B sat:4B on:5B a:6B mat:7B'::tsvector || 'fat:1C cat:2C is:3C not:4C weak:5C'::tsvector;`}/>
                     <img src="/img/article/get_started/tsvector_pesos_2.png" alt="Resultado tsvector com pesos e concatenando conteúdos" className="d-block mx-auto mt-4 mb-4"/>
-                    <p dangerouslySetInnerHTML={{__html:"Trabalhar diretamente com o <code>tsvector</code> é uma boa oportunidade de entender como o PostgreSQL transforma o conteúdo de um documento utilizando técnicas de Full Text Search. Mas o <code>tsvector</code> esta limitado a <b>ordenar as palavras</b> encontradas, mantendo sempre a <b>singularidade</b> de cada palavra no vetor. Além disso, o <code>tsvector</code> consegue interpretar o <b>peso</b> e o <b>posicionamento</b> informado no conteúdo do documento, porém não é ele que ranqueia e normaliza o conteúdo do documento. Pensando nisso, o PostgreSQL desenvolveu uma função capaz de atender este requisito, e tornar mais prático o trabalho do Full Text Search no SGBD."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Trabalhar diretamente com o <code>tsvector</code> é uma boa oportunidade de entender como o PostgreSQL transforma o conteúdo de um documento utilizando técnicas de Full Text Search. Mas o <code>tsvector</code> está limitado a <b>ordenar as palavras</b> encontradas, mantendo sempre a <b>singularidade</b> de cada palavra no vetor. Além disso, o <code>tsvector</code> consegue interpretar o <b>peso</b> e o <b>posicionamento</b> informado no conteúdo do documento, porém não é ele que ranqueia e normaliza o conteúdo do documento. Pensando nisso, o PostgreSQL desenvolveu uma função capaz de atender este requisito, e tornar mais prático o trabalho do Full Text Search no SGBD."}}/>
 
                     <h2>to_tsvector</h2>
                     <p dangerouslySetInnerHTML={{__html:"A função <code>to_tsvector</code> é responsável por aplicar a <b>normalização</b>, o tratamento de <b>stop words</b> e todos os outros tratamentos feitos quando trabalhamos com <code>tsvector</code>, transformando as palavras de um documento em <b><i>lexemes</i></b> de fato."}}/>
                     <SQLBlockComponent conteudo={`SELECT to_tsvector('a fat cat sat on a mat and ate a fat rat but fat cats is not weak');`}/>
                     <img src="/img/article/get_started/to_tsvector_1.png" alt="Função to_tsvector" className="d-block mx-auto mt-4 mb-4"/>
-                    <p dangerouslySetInnerHTML={{__html:"É possível informar um dicionário especifico para esta função. Podemos verificar o resultado quando passamos o dicionário <code>simple</code> na função <code>to_tsvector</code>. De cara é possível notar que a normalização e as stop words <b>não foram executadas com êxito</b>."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"É possível informar um dicionário específico para esta função. Podemos verificar o resultado quando passamos o dicionário <code>simple</code> na função <code>to_tsvector</code>. De cara é possível notar que a normalização e as stop words <b>não foram executadas com êxito</b>."}}/>
                     <SQLBlockComponent conteudo={`SELECT to_tsvector('simple', 'a fat cat sat on a mat and ate a fat rat but fat cats is not weak');`}/>
                     <img src="/img/article/get_started/to_tsvector_dic_simple.png" alt="Resultado to_tsvector no dicionário simple" className="d-block mx-auto mt-4 mb-4"/>
-                    <p dangerouslySetInnerHTML={{__html:"Desta forma podemos concluir que a definição de um dicionário é <b>crucial</b> nesta etapa. O PostgreSQL disponibiliza alguns dicionários de stop words, como melhor explicado no tópico <b><i>O que é um Dicionário?</i></b>. Cada idioma tem seu dicionário e podemos testar um case em português."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Desta forma podemos concluir que a definição de um dicionário é <b>crucial</b> nesta etapa. O PostgreSQL disponibiliza alguns dicionários de stop words, como melhor explicado no tópico '<b><i>O que é um Dicionário?</i></b>'. Cada idioma tem seu dicionário e podemos testar um case em português."}}/>
                     <SQLBlockComponent conteudo={`SELECT to_tsvector('portuguese', 'Um gato gordo sentou-se em uma esteira e comeu um rato gordo mas gatos gordos não são fracos');`}/>
                     <img src="/img/article/get_started/to_tsvector_dic_portuguese.png" alt="Resultado to_tsvector num dicionário português" className="d-block mx-auto mt-4 mb-4"/>
 
@@ -110,7 +110,7 @@ function GetStarted(){
                     <p dangerouslySetInnerHTML={{__html:"Também é possível trabalhar com <b>pesos</b> no <code>tsquery</code>. Sabendo que os pesos vão de <b>A</b> a <b>D</b>, é possível informar mais de um peso para um mesmo termo, basta informar em sequência."}}/>
                     <SQLBlockComponent conteudo={`SELECT 'fat:ab & rat & ! cat'::tsquery;`}/>
                     <img src="/img/article/get_started/tsquery_pesos.png" alt="Resultado tsquery com pesos" className="d-block mx-auto mt-4 mb-4"/> 
-                    <p dangerouslySetInnerHTML={{__html:"Além destes operadores, o PostgreSQL possui um operador especifico para trabalhar com a <b>proximidade de termos</b>, chamado <code><-></code>."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Além destes operadores, o PostgreSQL possui um operador específico para trabalhar com a <b>proximidade de termos</b>, chamado <code><-></code>."}}/>
                     <SQLBlockComponent conteudo={`SELECT 'fat:ab & rat:b & ! cat <-> dog'::tsquery;`}/>
                     <img src="/img/article/get_started/tsquery_operador.png" alt="Resultado tsquery com operador <->" className="d-block mx-auto mt-4 mb-4"/>
 
@@ -122,7 +122,7 @@ function GetStarted(){
                     <img src="/img/article/get_started/to_tsquery_2.png" alt="Resultado to_tsquery em português" className="d-block mx-auto mt-4 mb-4"/>
 
                     <h2>Outras funções tsquery</h2>
-                    <p dangerouslySetInnerHTML={{__html:"Além da função <code>to_tsquery</code> o PostgreSQL disponibilizou outras maneiras de trabalhar com <b>query</b> e <b>text search</b>, uma delas é com a função <code>plainto_tsquery</code> que permite a consulta por <b>sentença completa</b>, com espaçamentos e pontuações. O resultado desta função é um grupo de lexemes trabalhando com o operador <code>&</code>"}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Além da função <code>to_tsquery</code> o PostgreSQL disponibiliza outras maneiras de trabalhar com <b>query</b> e <b>text search</b>, uma delas é com a função <code>plainto_tsquery</code> que permite a consulta por <b>sentença completa</b>, com espaçamentos e pontuações. O resultado desta função é um grupo de lexemes trabalhando com o operador <code>&</code>"}}/>
                     <SQLBlockComponent conteudo={`SELECT plainto_tsquery('The Fat Rats, the fat cats. The fat horse');`}/>
                     <img src="/img/article/get_started/plainto_tsquery.png" alt="Resultado plainto_tsquery" className="d-block mx-auto mt-4 mb-4"/>
 
@@ -136,7 +136,7 @@ function GetStarted(){
                         `SELECT * FROM tbauthor WHERE autname @@ 'daniels';`
                     }/>
                     <img src="/img/article/get_started/operador_arroba.png" alt="Resultado select tbauthor com @@" className="d-block mx-auto mt-4 mb-4"/>
-                    <p dangerouslySetInnerHTML={{__html:"É possível notar a semelhança do operador <code>@@</code> com o operador <code>like</code> ou <code>ilike</code> , e realmente para este exemplo a utilização dos outros operadores resultaria em respostas semelhantes. A diferença de utilizar o operador <code>@@</code> esta no seu propósito, pois enquanto operadores como <code>like</code> ou <code>ilike</code> tendem a comparar padrões textuais, o operador <code>@@</code> tem o proposito de trabalhar em conjunto com o FTS, compreendendo a normalização dos termos e realizando o <i>“match”</i> do conteúdo <code>tsvector</code> com a query <code>tsquery</code>."}}/>
+                    <p dangerouslySetInnerHTML={{__html:"É possível notar a semelhança do operador <code>@@</code> com o operador <code>like</code> ou <code>ilike</code> , e realmente para este exemplo a utilização dos outros operadores resultaria em respostas semelhantes. A diferença de utilizar o operador <code>@@</code> está no seu propósito, pois enquanto operadores como <code>like</code> ou <code>ilike</code> tendem a comparar padrões textuais, o operador <code>@@</code> tem o propósito de trabalhar em conjunto com o FTS, compreendendo a normalização dos termos e realizando o <i>“match”</i> do conteúdo <code>tsvector</code> com a query <code>tsquery</code>."}}/>
                     <SQLBlockComponent conteudo="
                         SELECT newid,newtitle,newdescription
 FROM tbnews
@@ -177,7 +177,7 @@ SELECT newid, newtsvector
 
                     <h2>Trabalhando com indexação</h2>
                     <p dangerouslySetInnerHTML={{__html:"A indexação é uma técnica usada para melhorar o <b>desempenho</b> das consultas. Esta técnica armazena as posições das linhas em uma tabela, de acordo com o valor de uma ou mais colunas. Quando uma consulta busca por um valor específico, o PostgreSQL pode usar o índice para ir diretamente à linha que contém o valor, sem precisar verificar todas as linhas da tabela."}}/>
-                    <p dangerouslySetInnerHTML={{__html:"Podemos gerar um índice para a coluna <code>newtsvector</code> utilizando o <code>GIN</code>, técnica de indexação mais utilizadas para tipos complexos, ideal para o contexto de Full Text Search. É uma tarefa bem simples mas que trará bons resultados!!!"}}/>
+                    <p dangerouslySetInnerHTML={{__html:"Podemos gerar um índice para a coluna <code>newtsvector</code> utilizando o <code>GIN</code>, técnica de indexação mais utilizada para tipos complexos, ideal para o contexto de Full Text Search. É uma tarefa bem simples mas que trará bons resultados!!!"}}/>
                     <SQLBlockComponent conteudo={`CREATE INDEX newtsvector_idx
 	ON tbnews
  USING GIN(newtsvector);`}/>
