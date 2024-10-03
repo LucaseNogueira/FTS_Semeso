@@ -1,0 +1,18 @@
+[
+    {"icone":"skill-icons:react-dark", "titulo": "React", "url":"https://pt-br.legacy.reactjs.org/"},
+    {"icone":"logos:nodejs-icon", "titulo": "Node", "url":"https://nodejs.org/pt"},
+    {"icone":"logos:postgresql", "titulo": "PostgreSQL", "url":"https://www.postgresql.org/"},
+    {"icone":"logos:git-icon", "titulo": "Git", "url":"https://www.postgresql.org/"},
+    {"icone":"mdi:github", "titulo": "GitHub", "url":"https://github.com/"},
+    {"icone":"logos:neon-icon", "titulo": "Neon Serveless Postgres", "url":"https://neon.tech/"},
+    {"icone":"akar-icons:vercel-fill", "titulo": "Vercel", "url":"https://vercel.com/"},
+    {"icone":"logos:docker-icon", "titulo": "Docker", "url":"https://www.docker.com/"},
+    {"icone":"skill-icons:postman", "titulo": "Postman", "url":"https://www.postman.com/"},
+    {"icone":"devicon:githubactions", "titulo": "GitHub Actions", "url":"https://github.com/features/actions"},
+    {"icone":"logos:jest", "titulo": "Jest", "url":"https://jestjs.io/pt-BR/"},
+    {"icone":"vscode-icons:file-type-dotenv", "titulo": "dotenv", "url":"https://www.dotenv.org/"},
+    {"icone":"simple-icons:iconify", "titulo": "Iconify", "url":"https://iconify.design/"},
+    {"icone":"devicon:vscode", "titulo": "VScode", "url":"https://code.visualstudio.com/"},
+    {"icone":"devicon:notion", "titulo": "Notion", "url":"https://www.notion.so/"},
+    {"icone":"skill-icons:bootstrap", "titulo": "Bootstrap", "url":"https://getbootstrap.com/"} 
+] 

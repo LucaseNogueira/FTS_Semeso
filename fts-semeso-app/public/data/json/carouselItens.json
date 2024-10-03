@@ -1,0 +1,42 @@
+[
+    {
+      "id": "itemSobreFts",
+      "src": "img/carousel/site_postgres_fts_light.png",
+      "alt": "Site PostgreSQL",
+      "title": "Sobre Full Text Search",
+      "description": "Descubra o que o PostgreSQL tem a dizer sobre Full Text Search em sua documentação.",
+      "link": "https://www.postgresql.org/docs/current/textsearch.html"
+    }, 
+    {
+      "id": "itemFTSAplicacao",
+      "src": "img/carousel/site_postgres_fts.png",
+      "alt": "FTS numa aplicação",
+      "title": "Full Text Search numa aplicação",
+      "description": "Conheça nosso exemplo de aplicação que utiliza FTS para buscar dados do BBC News",
+      "link": "/exemple"
+    },
+    {
+      "id": "itemVisiteRepositorio",
+      "src": "img/carousel/site_repositorio_dark.png",
+      "alt": "Repositório Projeto FTS Semeso",
+      "title": "Visite nosso repositório",
+      "description": "Visite o repositório desta aplicação no GitHub",
+      "link": "https://github.com/LucaseNogueira/FTS_Semeso"
+    },
+    {
+      "id": "itemSobreAutor",
+      "src": "img/carousel/linkedin_perfil.png",
+      "alt": "Sobre o Autor",
+      "title": "Sobre o Autor",
+      "description": "Visite o Linkedin do autor deste site",
+      "link": "https://www.linkedin.com/in/lucas-nogueira-695145241/"
+    }, 
+    { 
+      "id": "itemPerfilSemeso",
+      "src": "img/carousel/perfil_semeso.png",
+      "alt": "Redes sociais SEMESO",
+      "title": "Organização do SEMESO",
+      "description": "Conheça um pouco mais sobre o curso de Engenharia de Software da CEAVI/UDESC. A UDESC é uma universidade pública, gratuita e com destaque em todo o Brasil!",
+      "link": "https://www.instagram.com/udesc.engsoftware/"
+    }
+  ]

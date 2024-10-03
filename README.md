@@ -54,9 +54,9 @@ Recomendo que seu computador possua os dois software com as mesmas versões util
         CONSTRAINT pk_tbnewsauthor PRIMARY KEY (newid, autid),
         CONSTRAINT fk_tbnewsauthor_tbnews FOREIGN KEY (newid) REFERENCES tbnews (newid) ON DELETE CASCADE,
         CONSTRAINT fk_tbnewsauthor_tbauthor FOREIGN KEY (autid) REFERENCES tbauthor (autid) ON DELETE CASCADE
-    );
+    ); 
     ```
-3. Vá em [data](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbauthor.csv) e baixe os arquivos [tbauthor](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data), [tbnews](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbnews.csv), [tbnewsauthor](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbnewsauthor.csv);
+3. Vá em [data](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data) e baixe os arquivos [tbauthor](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbauthor.csv), [tbnews](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbnews.csv), [tbnewsauthor](https://github.com/LucaseNogueira/FTS_Semeso/blob/main/doc/data/tbnewsauthor.csv);
 4. Retorne ao PGAdmin, precione o botão direito na tabela ``tbauthor`` e clique em ``Import\Export Data..``. Selecione o arquivo "tbauthor.csv", formato csv e encoding UTF8. Clique em "OK";
 5. Repita o processo da **etapa 4**, porém com as tabelas/arquivos "tbnews" e "tbnewsauthor";
 6. Pronto, é só isso!!! :D
