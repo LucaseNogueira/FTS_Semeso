@@ -8,14 +8,6 @@
       "link": "https://www.postgresql.org/docs/current/textsearch.html"
     }, 
     {
-      "id": "itemFTSAplicacao",
-      "src": "img/carousel/site_postgres_fts.png",
-      "alt": "FTS numa aplicação",
-      "title": "Full Text Search numa aplicação",
-      "description": "Conheça nosso exemplo de aplicação que utiliza FTS para buscar dados do BBC News",
-      "link": "/exemple"
-    },
-    {
       "id": "itemVisiteRepositorio",
       "src": "img/carousel/site_repositorio_dark.png",
       "alt": "Repositório Projeto FTS Semeso",
