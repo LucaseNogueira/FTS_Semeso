@@ -3,7 +3,6 @@ const { getNewsWithTerms } = require('../service/news');
 async function getNews(req, res){
     try{
         const sentence = req.query.sentence;
-        console.log('A frase é: ' + sentence);
         const response = sentence ? await getNewsWithTerms(sentence) : [];
 
         res.json(response);

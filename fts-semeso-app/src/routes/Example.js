@@ -13,7 +13,6 @@ function Example(){
             const sentence = event.target.value;
             try{
                 const response = await getNewsWithTerms(sentence);
-                console.log(response);
                 setNews(response);
             }catch(error){
                 console.error(error);
