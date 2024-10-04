@@ -40,7 +40,7 @@ function HeaderComponentFluid(){
                                 <HeaderNavLinkItem className="nav-link" href="https://www.linkedin.com/in/lucas-nogueira-695145241/" target="_blank" rel="noreferrer">Sobre mim</HeaderNavLinkItem> 
                             </li>
                             <li className="nav-item">
-                                <HeaderNavLinkItem className="nav-link" href="/exemple">Exemplo</HeaderNavLinkItem> 
+                                {/* <HeaderNavLinkItem className="nav-link" href="/exemple">Exemplo</HeaderNavLinkItem>  */}
                             </li> 
                         </ul>
                     </HeaderNavLinkContainer> 
