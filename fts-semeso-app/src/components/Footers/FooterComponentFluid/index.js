@@ -28,7 +28,7 @@ const FooterComponentFluid = () =>{
     const [techStack, setTechStackList] = useState([]);
 
     useEffect(() => {
-        fetch("/data/json/footerTechStack.json")
+        fetch("/data/json/footerTechstack.json")
         .then(response => response.json())
         .then(data => setTechStackList(data))
         .catch(error => console.error("Erro ao carregar os itens da pilha de tecnologias"))
