@@ -7,6 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(cors({origin:"*"}));
 
+app.use('/', (req, res) => {
+    res.send('Welcome to FTS-SEMESO Server API');
+})
+
 app.use('/news', newsRoute);
 
 const port = 8000;
