@@ -6,6 +6,11 @@ const HeaderContainerFluid = styled.header`
     @media (max-width: 991.9px) {
         background-color: transparent;
     }
+    
+    .navbar-toggler:focus{
+        outline: none;
+        box-shadow: none;
+    }
 `;
  
 const HeaderNavLinkContainer = styled.div`
