@@ -66,7 +66,7 @@ function Home(){
                     </ul>
                     <div className="row">
                         <div className="col-6">
-                            <a href="https://www.ifood.com.br/" title="Elasticsearch" target="_blank" rel="noreferrer">
+                            <a href="https://www.elastic.co/pt/elasticsearch" title="Elasticsearch" target="_blank" rel="noreferrer">
                                 <Icon icon="logos:elasticsearch" width="200" height="200" className="d-block mx-auto mt-4 mb-4"/>
                             </a>
                         </div>
