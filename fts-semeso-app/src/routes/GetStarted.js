@@ -205,6 +205,21 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER newtsvector_update AFTER INSERT OR UPDATE
 	ON tbnews FOR EACH ROW EXECUTE PROCEDURE news_tsvector_trigger();`}/>
 
+                    <h2>Consulta</h2>
+                    <p dangerouslySetInnerHTML={{__html:"Após realizado o desenvolvimento da coluna <code>tsvector</code> é possível desenvolver uma query de consulta."}}/>
+                    <SQLBlockComponent conteudo={`SELECT newtitle as title,
+       autname as author,
+       newdescription as description,
+       newlink as link,
+       newpubdate as date,
+       newtsvector
+  FROM tbnews
+ INNER JOIN tbnewsauthor ON tbnews.newid = tbnewsauthor.newid
+ INNER JOIN tbauthor ON tbnewsauthor.autid = tbauthor.autid
+ WHERE newtsvector @@ plainto_tsquery('english', 'politic')
+ LIMIT 15
+`}/>
+
                     <h2>Fundamentação Teórica</h2> 
                     <p dangerouslySetInnerHTML={{__html:"O conteúdo <b>introdutório ao Full Text Search</b> pode ser encontrado em <a href='https://www.postgresql.org/docs/current/textsearch-intro.html' target='_blank' rel='noopener noreferrer'>PostgreSQL: Documentation: 16: 12.1. Introduction</a>. Nesta página também é encontrado uma explicação do operador <code>@@</code> e um caminho para as <b>configurações padrões de buscas textuais</b>."}}/>
                     <p dangerouslySetInnerHTML={{__html:"O significado da palavra <b>lexema</b>, assim como o conteúdo deste tópico no minicurso, foi baseado na explicação presente na página <a href='https://resumos.soescola.com/glossario/lexema-o-que-e-significado/#google_vignette' target='_blank' rel='noopener noreferrer'>Lexema: O que é, significado - Resumos Só Escola (soescola.com)</a>"}}/>
